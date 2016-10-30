@@ -1,0 +1,9 @@
+h1 Slack連携
+- if notice
+    p = notice
+
+- if session[:user]
+    p = session[:user].to_json
+    =link_to 'ログアウト', '/auth/signout'
+- else
+    =link_to 'Slackでログイン', '/auth/slack'

@@ -11,10 +11,13 @@ group :default do
   gem 'turbolinks'
   gem 'jbuilder'
   gem 'therubyracer', platforms: :ruby
+  gem 'omniauth-slack'
+  gem 'slim-rails'
 end
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
 end
 
 group :development do

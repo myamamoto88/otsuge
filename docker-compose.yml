@@ -19,6 +19,8 @@ services:
     environment:
       RAILS_ENV: 'development'
       DATABASE_URL: mysql2://root@database:3306
+      SLACK_API_KEY: ${SLACK_API_KEY}
+      SLACK_API_SECRET: ${SLACK_API_SECRET}
     ports:
       - '3000:3000'
     links:
