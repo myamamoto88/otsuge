@@ -3,7 +3,7 @@ h1 Slack連携
     p = notice
 
 - if session[:user]
-    p = session[:user].to_json
-    =link_to 'ログアウト', '/auth/signout'
+    p = link_to '告知作成', '/announcements/new'
+    p = link_to 'ログアウト', '/auth/signout'
 - else
-    =link_to 'Slackでログイン', '/auth/slack'
+    = link_to 'Slackでログイン', '/auth/slack'

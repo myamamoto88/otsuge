@@ -1,0 +1,31 @@
+h1 Listing announcements
+
+table
+  thead
+    tr
+      th Message
+      th Announce at
+      th Announce icon emoji
+      th Announce icon url
+      th Announce name
+      th Status
+      th
+      th
+      th
+
+  tbody
+    - @announcements.each do |announcement|
+      tr
+        td = announcement.message
+        td = announcement.announce_at
+        td = announcement.announce_icon_emoji
+        td = announcement.announce_icon_url
+        td = announcement.announce_name
+        td = announcement.status
+        td = link_to 'Show', announcement
+        td = link_to 'Edit', edit_announcement_path(announcement)
+        td = link_to 'Destroy', announcement, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Announcement', new_announcement_path

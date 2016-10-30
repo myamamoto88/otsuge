@@ -1,0 +1,2 @@
+json.extract! announcement, :id, :message, :announce_at, :announce_icon_emoji, :announce_icon_url, :announce_name, :status, :created_at, :updated_at
+json.url announcement_url(announcement, format: :json)

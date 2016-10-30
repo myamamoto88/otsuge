@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Message:
+  = @announcement.message
+p
+  strong Announce at:
+  = @announcement.announce_at
+p
+  strong Announce icon emoji:
+  = @announcement.announce_icon_emoji
+p
+  strong Announce icon url:
+  = @announcement.announce_icon_url
+p
+  strong Announce name:
+  = @announcement.announce_name
+p
+  strong Status:
+  = @announcement.status
+
+= link_to 'Edit', edit_announcement_path(@announcement)
+'|
+= link_to 'Back', announcements_path
