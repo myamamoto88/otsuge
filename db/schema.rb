@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20161030034956) do
     t.string   "announce_icon_emoji"
     t.string   "announce_icon_url"
     t.string   "announce_name",       null: false
+    t.string   "created_user",        null: false
     t.integer  "status",              null: false
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false

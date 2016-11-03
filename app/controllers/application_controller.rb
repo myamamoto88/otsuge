@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
 
   def login?
-    user = session.dig(:user, 'user')
+    user = session[:user].try(:[], 'user')
     return false if user.nil?
     user != 'null'
   end

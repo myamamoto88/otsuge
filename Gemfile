@@ -13,6 +13,7 @@ group :default do
   gem 'therubyracer', platforms: :ruby
   gem 'omniauth-slack'
   gem 'slim-rails'
+  gem 'validates_timeliness'
 end
 
 group :development, :test do
