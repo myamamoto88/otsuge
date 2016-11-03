@@ -13,9 +13,7 @@ services:
   server:
     image: otsuge
     container_name: otsuge-server
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     environment:
       RAILS_ENV: 'development'
       DATABASE_URL: mysql2://root@database:3306
@@ -27,3 +25,4 @@ services:
       - database
     volumes:
       - .:/usr/src/app
+    tty: true
