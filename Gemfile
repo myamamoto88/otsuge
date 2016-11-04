@@ -14,6 +14,7 @@ group :default do
   gem 'omniauth-slack'
   gem 'slim-rails'
   gem 'validates_timeliness'
+  gem 'materialize-sass'
 end
 
 group :development, :test do

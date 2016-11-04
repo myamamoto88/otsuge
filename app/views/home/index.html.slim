@@ -1,9 +1,13 @@
-h1 Slack連携
+h1.card-panel Otsuge
+
 - if notice
     p = notice
 
-- if session[:user]
-    p = link_to '告知作成', '/announcements/new'
-    p = link_to 'ログアウト', '/auth/signout'
-- else
-    = link_to 'Slackでログイン', '/auth/slack'
+.row
+  .col.s12
+    - if session[:user]
+        p = link_to 'ログアウト', '/auth/signout', class: 'btn waves-effect waves-light white-text'
+    - else
+        = link_to 'ログイン', '/auth/slack', class: 'btn waves-effect waves-light white-text'
+
+p = link_to '告知作成', '/announcements/new'
