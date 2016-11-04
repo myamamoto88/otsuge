@@ -2,6 +2,7 @@ class Announcement < ApplicationRecord
   enum status: { untreated: 0, treated: 1 }
 
   with_options presence: true do
+    validates :title
     validates :message
     validates :announce_at, timeliness: { before: -> { Time.current } }
     validates :announce_name
