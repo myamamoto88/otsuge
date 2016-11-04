@@ -14,7 +14,7 @@ html
         ul[id='nav-mobile' class='right hide-on-med-and-down']
           li
             - if session[:user]
-                = link_to 'ログアウト', '/auth/signout'
+                = link_to t('views.common.logout'), '/auth/signout'
             - else
-                = link_to 'ログイン', '/auth/slack'
+                = link_to t('views.common.login'), '/auth/slack'
     == yield

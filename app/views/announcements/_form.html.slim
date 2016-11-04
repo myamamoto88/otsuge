@@ -16,15 +16,12 @@
     = f.label :announce_at
     = f.text_field :announce_at, class: 'datetimepicker'
   .field
-    = f.label :announce_icon_emoji
-    = f.text_field :announce_icon_emoji
-  .field
-    = f.label :announce_icon_url
-    = f.text_field :announce_icon_url
+    = f.label :announce_icon
+    = f.text_field :announce_icon
   .field
     = f.label :announce_name
     = f.text_field :announce_name
-  .actions = f.submit :submit, class: 'btn waves-effect waves-light'
+  .actions = f.submit t('views.common.create'), class: 'btn waves-effect waves-light'
 
 javascript:
   $('.datetimepicker').datetimepicker({step:5});

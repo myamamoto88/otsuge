@@ -13,16 +13,15 @@
 ActiveRecord::Schema.define(version: 20161030034956) do
 
   create_table "announcements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
-    t.string   "title",                             null: false
-    t.text     "message",             limit: 65535, null: false
-    t.datetime "announce_at",                       null: false
-    t.string   "announce_icon_emoji"
-    t.string   "announce_icon_url"
-    t.string   "announce_name",                     null: false
-    t.string   "created_user",                      null: false
-    t.integer  "status",                            null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.string   "title",                       null: false
+    t.text     "message",       limit: 65535, null: false
+    t.datetime "announce_at",                 null: false
+    t.string   "announce_icon",               null: false
+    t.string   "announce_name",               null: false
+    t.string   "created_user",                null: false
+    t.integer  "status",                      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end

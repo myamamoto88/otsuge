@@ -4,8 +4,7 @@ class CreateAnnouncements < ActiveRecord::Migration[5.0]
       t.string :title, null: false
       t.text :message, null: false
       t.timestamp :announce_at, null: false
-      t.string :announce_icon_emoji
-      t.string :announce_icon_url
+      t.string :announce_icon, null: false
       t.string :announce_name, null: false
       t.string :created_user, null: false
       t.integer :status, null: false

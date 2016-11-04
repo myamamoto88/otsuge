@@ -1,5 +1,11 @@
 ---
 ja:
+  views:
+    common:
+      login: ログイン
+      logout: ログアウト
+      delete_confirm: 本当に削除しますか？
+      create: '作成'
   activerecord:
     errors:
       messages:
@@ -7,6 +13,19 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      announcement: 告知
+    attributes:
+      announcement:
+        title: 説明
+        message: 告知文
+        announce_at: 告知日時
+        announce_name: 告知ユーザの名前
+        announce_icon: '告知ユーザのアイコン(:emoji: or url)'
+        created_user: 作成者
+        status: 状態
+        created_at: 作成日時
+        updated_at: 更新日時
   date:
     abbr_day_names:
     - 日

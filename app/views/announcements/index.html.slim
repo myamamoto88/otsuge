@@ -9,6 +9,6 @@
         .card-action
           = link_to content_tag(:i, 'info_outline', class: 'material-icons'), announcement
           = link_to content_tag(:i, 'mode_edit', class: 'material-icons'), edit_announcement_path(announcement)
-          = link_to content_tag(:i, 'delete', class: 'material-icons'), announcement, data: { confirm: 'Are you sure?' }, method: :delete
+          = link_to content_tag(:i, 'delete', class: 'material-icons'), announcement, data: { confirm: t('views.common.delete_confirm') }, method: :delete
 
 .right = link_to content_tag(:i, 'add', class: 'material-icons'), new_announcement_path, class: 'btn-floating btn-large waves-effect waves-light red'

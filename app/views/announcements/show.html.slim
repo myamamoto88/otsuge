@@ -4,36 +4,51 @@
       .card-content
         .row
           .col.s2
-            = 'title'
+            = t 'activerecord.attributes.announcement.title'
           .col.s10
             span.card-title = @announcement.title
         .row
           .col.s2
-            = 'message'
+            = t 'activerecord.attributes.announcement.message'
           .col.s10
             pre = @announcement.message
         .row
           .col.s2
-            = 'announce_name'
+            = t 'activerecord.attributes.announcement.announce_name'
           .col.s10
             p = @announcement.announce_name
         .row
           .col.s2
-            = 'icon'
+            = t 'activerecord.attributes.announcement.announce_icon'
           .col.s10
-            p = @announcement.announce_icon_emoji || @announcement.announce_icon_url
+            p = @announcement.announce_icon
         .row
           .col.s2
-            = 'announce_at'
+            = t 'activerecord.attributes.announcement.announce_at'
           .col.s10
             p = @announcement.announce_at
         .row
           .col.s2
-            = 'status'
+            = t 'activerecord.attributes.announcement.created_user'
+          .col.s10
+            p = @announcement.created_user
+        .row
+          .col.s2
+            = t 'activerecord.attributes.announcement.status'
           .col.s10
             p = @announcement.status
+        .row
+          .col.s2
+            = t 'activerecord.attributes.announcement.created_at'
+          .col.s10
+            p = @announcement.created_at
+        .row
+          .col.s2
+            = t 'activerecord.attributes.announcement.updated_at'
+          .col.s10
+            p = @announcement.updated_at
       .card-action
         = link_to content_tag(:i, 'mode_edit', class: 'material-icons'), edit_announcement_path(@announcement)
-        = link_to content_tag(:i, 'delete', class: 'material-icons'), @announcement, data: { confirm: 'Are you sure?' }, method: :delete
+        = link_to content_tag(:i, 'delete', class: 'material-icons'), @announcement, data: { confirm: t('views.common.delete_confirm') }, method: :delete
 
 .right = link_to content_tag(:i, 'list', class: 'material-icons'), announcements_path, class: 'btn-floating btn-large waves-effect waves-light red'
