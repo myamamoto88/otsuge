@@ -15,6 +15,7 @@ group :default do
   gem 'slim-rails'
   gem 'validates_timeliness'
   gem 'materialize-sass'
+  gem 'jquery-datetimepicker-rails'
 end
 
 group :development, :test do

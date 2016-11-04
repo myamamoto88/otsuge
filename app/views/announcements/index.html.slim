@@ -1,31 +1,14 @@
-h1 Listing announcements
+.row
+  - @announcements.each do |announcement|
+    .col.s12.m6
+      .card.small
+        .card-content
+          span.card-title = announcement.title
+          p = announcement.message
+          p = announcement.announce_at
+        .card-action
+          = link_to content_tag(:i, 'info_outline', class: 'material-icons'), announcement
+          = link_to content_tag(:i, 'mode_edit', class: 'material-icons'), edit_announcement_path(announcement)
+          = link_to content_tag(:i, 'delete', class: 'material-icons'), announcement, data: { confirm: 'Are you sure?' }, method: :delete
 
-table
-  thead
-    tr
-      th Message
-      th Announce at
-      th Announce icon emoji
-      th Announce icon url
-      th Announce name
-      th Status
-      th
-      th
-      th
-
-  tbody
-    - @announcements.each do |announcement|
-      tr
-        td = announcement.message
-        td = announcement.announce_at
-        td = announcement.announce_icon_emoji
-        td = announcement.announce_icon_url
-        td = announcement.announce_name
-        td = announcement.status
-        td = link_to 'Show', announcement
-        td = link_to 'Edit', edit_announcement_path(announcement)
-        td = link_to 'Destroy', announcement, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Announcement', new_announcement_path
+.right = link_to content_tag(:i, 'add', class: 'material-icons'), new_announcement_path, class: 'btn-floating btn-large waves-effect waves-light red'

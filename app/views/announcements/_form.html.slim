@@ -8,13 +8,13 @@
 
   .field
     = f.label :title
-    = f.text_area :title
+    = f.text_field :title
   .field
     = f.label :message
-    = f.text_area :message
+    = f.text_area :message, class: 'materialize-textarea'
   .field
     = f.label :announce_at
-    = f.datetime_select :announce_at
+    = f.text_field :announce_at, class: 'datetimepicker'
   .field
     = f.label :announce_icon_emoji
     = f.text_field :announce_icon_emoji
@@ -24,4 +24,7 @@
   .field
     = f.label :announce_name
     = f.text_field :announce_name
-  .actions = f.submit
+  .actions = f.submit :submit, class: 'btn waves-effect waves-light'
+
+javascript:
+  $('.datetimepicker').datetimepicker({step:5});

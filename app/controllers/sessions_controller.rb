@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     data = request.env['omniauth.auth']
     session[:user] = data.info
-    redirect_to root_path, notice: 'ログインしました'
+    redirect_to announcements_path, notice: 'ログインしました'
   end
 
   def destroy
