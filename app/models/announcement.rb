@@ -1,6 +1,14 @@
 class Announcement < ApplicationRecord
   enum status: { untreated: 0, treated: 1 }
 
+  scope :by_status, ->(state) {
+    if Announcement.statuses.keys.include? state
+      public_send(state)
+    else
+      untreated
+    end
+  }
+
   with_options presence: true do
     validates :title
     validates :message

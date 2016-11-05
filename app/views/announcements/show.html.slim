@@ -41,7 +41,7 @@
           .col.s2
             = t 'activerecord.attributes.announcement.status'
           .col.s10
-            p = @announcement.status
+            p = t "activerecord.attributes.announcement.state.#{@announcement.status}"
         .row
           .col.s2
             = t 'activerecord.attributes.announcement.created_at'

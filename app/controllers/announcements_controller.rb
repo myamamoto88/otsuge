@@ -4,7 +4,7 @@ class AnnouncementsController < ApplicationController
 
   # GET /announcements
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.by_status(params[:status])
   end
 
   # GET /announcements/1
