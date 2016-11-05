@@ -29,6 +29,11 @@
             p = @announcement.announce_at
         .row
           .col.s2
+            = t 'activerecord.attributes.announcement.channel'
+          .col.s10
+            p = @announcement.channel
+        .row
+          .col.s2
             = t 'activerecord.attributes.announcement.created_user'
           .col.s10
             p = @announcement.created_user

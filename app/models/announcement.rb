@@ -7,6 +7,7 @@ class Announcement < ApplicationRecord
     validates :announce_at, timeliness: { after: -> { Time.current } }
     validates :announce_name
     validates :announce_icon
+    validates :channel
     validates :status, inclusion: { in: Announcement.statuses.keys }
     validates :created_user
   end

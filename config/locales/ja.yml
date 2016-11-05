@@ -22,6 +22,7 @@ ja:
         announce_at: 告知日時
         announce_name: 告知ユーザの名前
         announce_icon: '告知ユーザのアイコン(:emoji: or url)'
+        channel: チャンネル
         created_user: 作成者
         status: 状態
         created_at: 作成日時

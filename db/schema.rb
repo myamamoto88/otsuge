@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030034956) do
+ActiveRecord::Schema.define(version: 20161105044626) do
 
   create_table "announcements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin" do |t|
     t.string   "title",                       null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20161030034956) do
     t.datetime "announce_at",                 null: false
     t.string   "announce_icon",               null: false
     t.string   "announce_name",               null: false
+    t.string   "channel",                     null: false
     t.string   "created_user",                null: false
     t.integer  "status",                      null: false
     t.datetime "created_at",                  null: false
