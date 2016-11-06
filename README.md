@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Otsuge
 
-Things you may want to cover:
+Slackに予約投稿するためのサービス
 
-* Ruby version
+## Setup
 
-* System dependencies
+direnvを使っているのであれば、.envrcに以下を設定する。
 
-* Configuration
+```
+export SLACK_API_KEY=
+export SLACK_API_SECRET=
+export RAILS_ENV=
+export SLACK_WEBHOOK_URL=
+export SECRET_KEY_BASE=
+```
 
-* Database creation
+イメージをビルド
+```
+docker-compose build
+```
 
-* Database initialization
+DB作成
+```
+docker-compose up -d database
+docker-compose run server rails db:setup db:migrate
+```
 
-* How to run the test suite
+アセットのコンパイル
+```
+docker-compose run server rails assets:precompile
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Start
 
-* Deployment instructions
-
-* ...
+```
+docker-compose up
+```
