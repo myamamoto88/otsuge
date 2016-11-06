@@ -30,6 +30,7 @@ ja:
         state:
           untreated: '未投稿'
           treated: '投稿済'
+          failed: '失敗'
   date:
     abbr_day_names:
     - 日

@@ -16,6 +16,7 @@ group :default do
   gem 'validates_timeliness'
   gem 'materialize-sass'
   gem 'jquery-datetimepicker-rails'
+  gem 'slack-notify'
 end
 
 group :development, :test do

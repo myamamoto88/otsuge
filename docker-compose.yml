@@ -15,10 +15,11 @@ services:
     container_name: otsuge-server
     build: .
     environment:
-      RAILS_ENV: 'development'
+      RAILS_ENV: ${RAILS_ENV}
       DATABASE_URL: mysql2://root@database:3306
       SLACK_API_KEY: ${SLACK_API_KEY}
       SLACK_API_SECRET: ${SLACK_API_SECRET}
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
     ports:
       - '3000:3000'
     links:
