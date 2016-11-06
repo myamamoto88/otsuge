@@ -6,6 +6,7 @@ ja:
       logout: ログアウト
       delete_confirm: 本当に削除しますか？
       create: '作成'
+      action: '操作'
   activerecord:
     errors:
       messages:

@@ -5,15 +5,20 @@
         li.tab.col.s3
           - active = params[:status] == state ? 'active': ''
           = link_to t("activerecord.attributes.announcement.state.#{state}"), announcements_path(status: state), class: active
-.row
-  - @announcements.each do |announcement|
-    .col.s12.m6
-      .card.small
-        .card-content
-          span.card-title = announcement.title
-          p = announcement.message
-          p = announcement.announce_at
-        .card-action
+table
+  thead
+    tr
+      th = t 'activerecord.attributes.announcement.title'
+      th = t 'activerecord.attributes.announcement.created_user'
+      th = t 'activerecord.attributes.announcement.announce_at'
+      th = t 'views.common..action'
+  tbody
+    - @announcements.each do |announcement|
+      tr
+        td = announcement.title
+        td = announcement.created_user
+        td = announcement.announce_at
+        td
           = link_to content_tag(:i, 'info_outline', class: 'material-icons'), announcement
           = link_to content_tag(:i, 'mode_edit', class: 'material-icons'), edit_announcement_path(announcement)
           = link_to content_tag(:i, 'delete', class: 'material-icons'), announcement, data: { confirm: t('views.common.delete_confirm') }, method: :delete
