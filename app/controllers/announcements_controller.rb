@@ -4,7 +4,7 @@ class AnnouncementsController < ApplicationController
 
   # GET /announcements
   def index
-    @announcements = Announcement.by_status(params[:status])
+    @announcements = Announcement.by_status(params[:status]).paginate(page: params[:page])
   end
 
   # GET /announcements/1
@@ -62,6 +62,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:title, :message, :announce_at, :announce_icon, :announce_name, :channel)
+      params.require(:announcement).permit(:title, :message, :announce_at, :announce_icon, :announce_name, :channel, :page)
     end
 end

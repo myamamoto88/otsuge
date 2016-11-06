@@ -2,3 +2,30 @@
 $primary-color: color("teal", "lighten-2") !default;
 @import 'materialize';
 @import 'jquery.datetimepicker';
+
+.pagination {
+  a {
+    color: #444;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 30px;
+    height: 30px;
+
+    li {
+      display: inline-block;
+      border-radius: 2px;
+      padding: 0 10px;
+      text-align: center;
+      vertical-align: top;
+    }
+  }
+
+  &.active a { color: #fff; }
+
+  &.active { background-color: $primary-color; }
+
+  &.disabled a {
+    cursor: default;
+    color: #999;
+  }
+}

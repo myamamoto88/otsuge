@@ -17,6 +17,7 @@ group :default do
   gem 'materialize-sass'
   gem 'jquery-datetimepicker-rails'
   gem 'slack-notify'
+  gem 'will_paginate-materialize'
 end
 
 group :development, :test do

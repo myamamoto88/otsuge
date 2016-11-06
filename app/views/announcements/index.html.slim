@@ -20,6 +20,8 @@
 
 .right = link_to content_tag(:i, 'add', class: 'material-icons'), new_announcement_path, class: 'btn-floating btn-large waves-effect waves-light red'
 
+= will_paginate @announcements, { status: params['status'] }
+
 javascript:
   $(document).ready(function(){
     $('ul.tabs').tabs({
