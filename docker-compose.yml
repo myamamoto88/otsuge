@@ -6,14 +6,16 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
-      - '3306:3306'
+      - 3306:3306
     volumes:
       - ./data:/usr/src/data
 
   server:
     image: otsuge
     container_name: otsuge-server
-    build: .
+    build:
+      context: .
+      dockerfile: containers/server/Dockerfile
     environment:
       RAILS_ENV: ${RAILS_ENV}
       DATABASE_URL: mysql2://root@database:3306
@@ -21,9 +23,24 @@ services:
       SLACK_API_SECRET: ${SLACK_API_SECRET}
       SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
     ports:
-      - '3000:3000'
+      - 3000:3000
     links:
       - database
     volumes:
       - .:/usr/src/app
     tty: true
+
+  cron:
+    image: cron
+    container_name: otsuge-cron
+    build:
+      context: .
+      dockerfile: containers/cron/Dockerfile
+    environment:
+      RAILS_ENV: ${RAILS_ENV}
+      DATABASE_URL: mysql2://root@database:3306
+      SLACK_API_KEY: ${SLACK_API_KEY}
+      SLACK_API_SECRET: ${SLACK_API_SECRET}
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
+    links:
+      - database
