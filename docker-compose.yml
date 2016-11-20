@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
-      - 3306:3306
+      - 3306
     volumes:
       - ./data:/usr/src/data
 
@@ -20,12 +20,12 @@ services:
       RAILS_ENV: ${RAILS_ENV}
       DATABASE_URL: mysql2://root@database:3306
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
-      SLACK_API_KEY: ${SLACK_API_KEY}
-      SLACK_API_SECRET: ${SLACK_API_SECRET}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
       SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
       RAILS_SERVE_STATIC_FILES: 1
     ports:
-      - 3000:3000
+      - ${PORT}:3000
     links:
       - database
     volumes:

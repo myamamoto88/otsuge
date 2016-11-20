@@ -8,10 +8,14 @@ class User
   end
 
   def name
-    @inner_attributes['user']
+    @inner_attributes['name']
   end
 
-  def full_name
-    @inner_attributes['first_name'] + @inner_attributes['last_name']
+  def email
+    @inner_attributes['email']
+  end
+
+  def identifier
+    "#{name} (#{email})"
   end
 end

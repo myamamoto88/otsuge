@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :slack, ENV['SLACK_API_KEY'], ENV['SLACK_API_SECRET'], scope: 'users:read'
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], { scope: 'email, profile' }
 end

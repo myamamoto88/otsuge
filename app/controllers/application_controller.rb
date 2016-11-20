@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
 
   def login?
-    user = session[:user].try(:[], 'user')
+    user = session[:user].try(:[], 'email')
     return false if user.nil?
     user != 'null'
   end

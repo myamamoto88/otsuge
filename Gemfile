@@ -11,7 +11,7 @@ group :default do
   gem 'turbolinks'
   gem 'jbuilder'
   gem 'therubyracer', platforms: :ruby
-  gem 'omniauth-slack'
+  gem 'omniauth-google-oauth2'
   gem 'slim-rails'
   gem 'validates_timeliness'
   gem 'materialize-sass'

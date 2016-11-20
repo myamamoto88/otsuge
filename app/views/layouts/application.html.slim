@@ -16,5 +16,5 @@ html
             - if session[:user]
                 = link_to t('views.common.logout'), '/auth/signout'
             - else
-                = link_to t('views.common.login'), '/auth/slack'
+                = link_to t('views.common.login'), '/auth/google_oauth2'
     == yield

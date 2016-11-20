@@ -23,7 +23,7 @@ class AnnouncementsController < ApplicationController
   # POST /announcements
   def create
     @announcement = Announcement.new(announcement_params)
-    @announcement.created_user = current_user.name
+    @announcement.created_user = current_user.identifier
     @announcement.status = :untreated
 
     respond_to do |format|
