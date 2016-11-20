@@ -1,6 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
-  before_action :login_required
+  before_action :login_required, except: [:index]
 
   # GET /announcements
   def index
