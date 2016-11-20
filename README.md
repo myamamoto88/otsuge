@@ -9,8 +9,8 @@ Slackに予約投稿するためのサービス
 direnvを使っているのであれば、.envrcに以下を設定する。
 
 ```
-export SLACK_API_KEY=
-export SLACK_API_SECRET=
+export GOOGLE_CLIENT_ID=
+export GOOGLE_CLIENT_SECRET
 export RAILS_ENV=
 export SLACK_WEBHOOK_URL=
 export SECRET_KEY_BASE=
@@ -27,7 +27,7 @@ docker-compose up -d database
 docker-compose run server rails db:setup db:migrate
 ```
 
-アセットのコンパイル
+アセットのコンパイル ※ RAILS_ENV=productionの場合
 ```
 docker-compose run server rails assets:precompile
 ```
