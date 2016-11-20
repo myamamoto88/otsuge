@@ -48,9 +48,15 @@ class AnnouncementsController < ApplicationController
 
   # DELETE /announcements/1
   def destroy
-    @announcement.destroy
+    if @announcement.untreated?
+      @announcement.destroy
+      result = 'successfully'
+    else
+      result = 'unsuccessfully'
+    end
+
     respond_to do |format|
-      format.html { redirect_to announcements_url, notice: 'Announcement was successfully destroyed.' }
+      format.html { redirect_to announcements_url, notice: "Announcement was #{result} destroyed." }
     end
   end
 
