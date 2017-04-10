@@ -1,4 +1,6 @@
 class Announcement < ApplicationRecord
+  before_save :strip_string
+
   enum status: { untreated: 0, treated: 1, failed: 2 }
 
   scope :by_status, ->(state) {
@@ -27,5 +29,13 @@ class Announcement < ApplicationRecord
     validates :channel
     validates :status, inclusion: { in: Announcement.statuses.keys }
     validates :created_user
+  end
+
+  private
+
+  def strip_string
+    self.announce_name&.strip!
+    self.announce_icon&.strip!
+    self.channel&.strip!
   end
 end
