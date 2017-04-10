@@ -61,13 +61,13 @@ class AnnouncementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_announcement
-      @announcement = Announcement.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_announcement
+    @announcement = Announcement.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def announcement_params
-      params.require(:announcement).permit(:title, :message, :announce_at, :announce_icon, :announce_name, :channel, :page)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def announcement_params
+    params.require(:announcement).permit(:title, :message, :announce_at, :announce_icon, :announce_name, :channel, :page)
+  end
 end
