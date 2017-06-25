@@ -31,6 +31,11 @@ class Announcement < ApplicationRecord
     validates :created_user
   end
 
+  def update_and_initialize_status(params)
+    _params = params.to_h.merge(status: Announcement.statuses[:untreated])
+    update _params
+  end
+
   private
 
   def strip_string

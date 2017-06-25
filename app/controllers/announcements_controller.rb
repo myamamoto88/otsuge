@@ -38,7 +38,7 @@ class AnnouncementsController < ApplicationController
   # PATCH/PUT /announcements/1
   def update
     respond_to do |format|
-      if @announcement.update(announcement_params)
+      if @announcement.update_and_initialize_status(announcement_params)
         format.html { redirect_to @announcement, notice: 'Announcement was successfully updated.' }
       else
         format.html { render :edit }
