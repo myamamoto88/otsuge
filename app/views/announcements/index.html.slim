@@ -24,7 +24,8 @@ table
           - if (params['status'] == 'untreated') or params['status'].nil?
             = link_to content_tag(:i, 'delete', class: 'material-icons'), announcement, data: { confirm: t('views.common.delete_confirm') }, method: :delete
 
-.right = link_to content_tag(:i, 'add', class: 'material-icons'), new_announcement_path, class: 'btn-floating btn-large waves-effect waves-light red'
+- if session[:user]
+  .fixed-action-btn = link_to content_tag(:i, 'add', class: 'material-icons'), new_announcement_path, class: 'btn-floating btn-large waves-effect waves-light red'
 
 = will_paginate @announcements, { status: params['status'] }
 
