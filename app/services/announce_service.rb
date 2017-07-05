@@ -32,7 +32,9 @@ class AnnounceService
   def build_client(announcement)
     option = {
       webhook_url: webhook_url,
-      channel: announcement.channel, username: announcement.announce_name
+      channel: announcement.channel,
+      username: announcement.announce_name,
+      link_names: 1
     }
 
     if announcement.icon_emoji?
