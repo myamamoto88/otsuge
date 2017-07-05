@@ -16,15 +16,10 @@ export SLACK_WEBHOOK_URL=
 export SECRET_KEY_BASE=
 ```
 
-イメージをビルド
-```
-docker-compose build
-```
+イメージをビルド、DB作成
 
-DB作成
-```
-docker-compose up -d database
-docker-compose run server rails db:setup db:migrate
+```shell
+bin/setup
 ```
 
 アセットのコンパイル ※ RAILS_ENV=productionの場合
